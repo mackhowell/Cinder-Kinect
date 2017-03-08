@@ -1,4 +1,4 @@
-#include "cinder/app/AppBasic.h"
+#include "cinder/app/App.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/Surface.h"
@@ -13,7 +13,7 @@ using namespace ci::app;
 using namespace std;
 
 
-class kinectBasicApp : public AppBasic {
+class kinectBasicApp : public AppBase {
   public:
 	void prepareSettings( Settings* settings );
 	void setup();
@@ -70,7 +70,7 @@ void kinectBasicApp::draw()
 	if( mDepthTexture )
 		gl::draw( mDepthTexture );
 	if( mColorTexture )
-		gl::draw( mColorTexture, Vec2i( 640, 0 ) );
+		gl::draw( mColorTexture, vec2( 640, 0 ) );
 }
 
 
